@@ -2,6 +2,9 @@ import java.util.Scanner;
 import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 
 class StackQueueMini {
@@ -31,10 +34,29 @@ class StackQueueMini {
       myStack.push(whole5);
   }
 
+  Queue <Integer> storage = new LinkedList<>();
   while (!myStack.isEmpty()) {
-    System.out.println("Here is what is in the stack:" + myStack.pop());
+    storage.add(myStack.pop());
+  }
+    
+  while (!storage.isEmpty()){
+    int val = storage.poll();
+     myStack.push(val);
+    }
+  
+  System.out.println("Here is what is in the stack from bottom to top:");
+
+  List <Integer> myArrayList = new ArrayList<>();
+  while (!myStack.isEmpty()) {
+    System.out.println(myStack.pop());
   }
 
-    } //end main
-  } //end class
-  
+  Collections.reverse(myArrayList);
+
+  for (int num : myArrayList) {
+    System.out.println(num + "");
+  }
+  System.out.println();
+
+    } //end method
+  }  //end class
