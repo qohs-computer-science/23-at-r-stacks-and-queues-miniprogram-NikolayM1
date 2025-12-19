@@ -123,6 +123,6 @@ public static void main(String[] args) {
     for (int num : listFromQueue) System.out.println(num);
   }
 
-  }
+  } //end method
 
-}
+} //end class
